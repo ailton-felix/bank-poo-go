@@ -2,15 +2,17 @@ package main
 
 import (
 	"fmt"
+
+	acc "github.com/BANK-POO-GO/bank-poo-go/accounts"
 )
 
 func main() {
-	fulanoAccount := CurrentAccount{titular: "Fulano", agency: 847,
-		accountNumber: 123456, balance: 1200.52}
+	fulanoAccount := acc.CurrentAccount{Titular: "Fulano", Agency: 847,
+		AccountNumber: 123456, Balance: 1200.52}
 
-	var cicranoAccount *CurrentAccount
-	cicranoAccount = new(CurrentAccount)
-	cicranoAccount.titular = "Cicrano"
+	var cicranoAccount *acc.CurrentAccount
+	cicranoAccount = new(acc.CurrentAccount)
+	cicranoAccount.Titular = "Cicrano"
 
 	fmt.Println(*cicranoAccount)
 	fmt.Println(fulanoAccount)
@@ -23,8 +25,8 @@ func main() {
 	fmt.Println(*cicranoAccount)
 
 	//-------------------------------------------
-	beltranoAccount := CurrentAccount{titular: "Beltrano", balance: 100}
-	zutanoAccount := CurrentAccount{titular: "Zutano", balance: 300}
+	beltranoAccount := acc.CurrentAccount{Titular: "Beltrano", Balance: 100}
+	zutanoAccount := acc.CurrentAccount{Titular: "Zutano", Balance: 300}
 
 	fmt.Println()
 	fmt.Println(beltranoAccount)
