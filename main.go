@@ -18,6 +18,26 @@ func main() {
 	fmt.Print("Saldo da conta do " + account1.Titular.Nome + ": ")
 	fmt.Println(account1.GetBalance())
 
+	// -------------------------------------
+	// interfaces
+	fmt.Println("\n\n# Testes com uso de interface\n")
+
+	accountPaulo := accounts.CurrentAccount{}
+	accountPaulo.DepositMoney(100)
+	fmt.Println("Conta Paulo")
+	fmt.Println("Saldo:", accountPaulo.GetBalance())
+	accounts.PayTicket(&accountPaulo, 50)
+	fmt.Println("Saldo pós pagamento:", accountPaulo.GetBalance())
+	println()
+
+	accountMaya := accounts.SavingAccount{}
+	accountMaya.DepositMoney(500)
+	fmt.Println("Conta Maya")
+	fmt.Println("Saldo:", accountMaya.GetBalance())
+	accounts.PayTicket(&accountMaya, 400)
+	fmt.Println("Saldo pós pagamento:", accountMaya.GetBalance())
+	println()
+
 	/* Using "CurrentAccount.Titular" as a string
 	fulanoAccount := acc.CurrentAccount{Titular: "Fulano", Agency: 847,
 		AccountNumber: 123456, Balance: 1200.52}
