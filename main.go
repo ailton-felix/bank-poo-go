@@ -5,7 +5,7 @@ import (
 )
 
 func main() {
-	fulanoAccount := accountAlias.CurrentAccount{titular: "Fulano", agency: 847,
+	fulanoAccount := CurrentAccount{titular: "Fulano", agency: 847,
 		accountNumber: 123456, balance: 1200.52}
 
 	var cicranoAccount *CurrentAccount
